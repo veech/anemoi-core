@@ -8,6 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Please add your functional changes to the appropriate section in the PR.
 Keep it human-readable, your future self will thank you!
 
+## [0.4.1](https://github.com/ecmwf/anemoi-core/compare/training-0.4.0...training-0.4.1) (2025-05-01)
+
+
+### Features
+
+* **graphs:** add scale_resolutions arg ([#188](https://github.com/ecmwf/anemoi-core/issues/188)) ([0ea0642](https://github.com/ecmwf/anemoi-core/commit/0ea06423e4979084b3afe70c30e43bb5dc5f88d5))
+
+
+### Bug Fixes
+
+* Adapt predict_step in model interface to pass on arguments for model classes ([#281](https://github.com/ecmwf/anemoi-core/issues/281)) ([a5b2643](https://github.com/ecmwf/anemoi-core/commit/a5b26432bc7b78577cd1febd5091b059cc82805c))
+* clean params complement ([#291](https://github.com/ecmwf/anemoi-core/issues/291)) ([4e9ca31](https://github.com/ecmwf/anemoi-core/commit/4e9ca313f838f5eccb305d6bf3b9afd8426f095f))
+* **training:** bump anemoi-graphs version to 0.5.2 ([#276](https://github.com/ecmwf/anemoi-core/issues/276)) ([9b8ec13](https://github.com/ecmwf/anemoi-core/commit/9b8ec13b56f0a18ac887c754d5d95a7953b2625d))
+
+
+### Documentation
+
+* Fix minor mistakes in CRPS user guide. ([#264](https://github.com/ecmwf/anemoi-core/issues/264)) ([52d9a2e](https://github.com/ecmwf/anemoi-core/commit/52d9a2e5e0cef82b65b604ed2dc55016a48aeaa2))
+
 ## [0.4.0](https://github.com/ecmwf/anemoi-core/compare/training-0.3.3...training-0.4.0) (2025-04-16)
 
 
