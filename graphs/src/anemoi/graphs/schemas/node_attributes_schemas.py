@@ -27,11 +27,12 @@ class PlanarAreaWeightSchema(BaseModel):
         "anemoi.graphs.nodes.attributes.PlanarAreaWeights",
         "anemoi.graphs.nodes.attributes.UniformWeights",
         "anemoi.graphs.nodes.attributes.CosineLatWeightedAttribute",
-        "anemoi.graphs.nodes.attributes.IsolatitudeAreaWeights",
     ] = Field(..., alias="_target_")
     "Implementation of the area of the nodes as the weights from anemoi.graphs.nodes.attributes."
-    norm: Literal["unit-max", "l1", "l2", "unit-sum", "unit-std"] = Field(example="unit-max")
+    norm: Optional[Literal["unit-max", "l1", "l2", "unit-sum", "unit-std"]] = Field(default=None, example="unit-max") # Made optional consistent with base class likely behaviour
     "Normalisation of the weights."
+    dtype: str = Field(default="float32") # Added dtype based on base class
+    "Data type for the weights."
 
 
 class SphericalAreaWeightSchema(BaseModel):
@@ -57,12 +58,20 @@ class NonmissingAnemoiDatasetVariableSchema(BaseModel):
     variable: str
     "The anemoi-datasets variable to use."
 
+class IsolatitudeAreaWeightsSchema(BaseModel):
+    target_: Literal["anemoi.graphs.nodes.attributes.IsolatitudeAreaWeights"] = Field(..., alias="_target_")
+    "Latitude-weighted area weights for rectilinear grids from anemoi.graphs.nodes.attributes."
+    norm: Optional[Literal["unit-max", "l1", "l2", "unit-sum", "unit-std"]] = Field(default=None, example="unit-max") # Made optional consistent with base class likely behaviour
+    "Normalisation of the weights."
+    dtype: str = Field(default="float32") # Added dtype based on base class
+    "Data type for the weights."
 
 SingleAttributeSchema = Union[
     PlanarAreaWeightSchema,
     SphericalAreaWeightSchema,
     CutOutMaskSchema,
     NonmissingAnemoiDatasetVariableSchema,
+    IsolatitudeAreaWeightsSchema,
 ]
 
 
